@@ -9,6 +9,7 @@ class Annonce
 {
 public:
     Annonce();
+    Annonce(std::string descr, std::string v, float t, Date retrait, Date retour, int i);
 
     void sethoraire (std::string ho);//pour fixer l'horaire
     void setDescription (std::string descr);//pour fixer la description
@@ -22,6 +23,7 @@ public:
     std::string getHoraire();//rend la valeur de l'horaire
     std::string getVille();
     bool empruntPossible(Date date);
+    int getId() ;
 
 private:
     std::string description;
@@ -29,6 +31,7 @@ private:
     float tarif;
     Date dateRetrait;
     Date dateRetour;
+    int id ;
 };
 
 #endif // ANNONCE_H

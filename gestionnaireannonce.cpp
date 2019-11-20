@@ -31,3 +31,11 @@ void GestionnaireAnnonce::envoiRequetePreteur(std::string idAnnonce,std::string 
 void GestionnaireAnnonce::creerAnnonce(double tarif,std::string ville,std::string adrRetrait,std::string adrRetour,Date date,std::string descriptif){
 
 }
+
+bool GestionnaireAnnonce::verifierDisponibilite(std::string idAnnonce){
+    for(Annonce a : listeAnnonce){
+        /*if(a.get){
+
+        }*/
+    }
+}

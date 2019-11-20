@@ -10,7 +10,6 @@ class GestionnaireAnnonce
 {
 
        private :
-            std::vector<Compte> listeCompte;
             std::vector<Annonce> listeAnnonce;
 
 
@@ -22,6 +21,8 @@ public:
     void envoiRequetePreteur(std::string idAnnonce,std::string idEmprunteur);
     void creerAnnonce(double tarif,std::string ville,std::string adrRetrait,std::string adrRetour,Date date,std::string descriptif);
     void reponseDemandePret();
+    bool verifierDisponibilite(std::string idAnnonce) ;
+
 };
 
 #endif // GESTIONNAIREANNONCE_H

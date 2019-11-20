@@ -5,6 +5,16 @@ Annonce::Annonce()
 {
     //rien
 }
+
+Annonce::Annonce(std::string descr, std::string v, float t, Date retrait, Date retour, int i){
+    description = descr ;
+    ville = v ;
+    tarif = t ;
+    dateRetrait = retrait ;
+    dateRetour = retour ;
+    id = i ;
+}
+
 std::string Annonce::getDescr(){
     return description;
 }
@@ -40,4 +50,9 @@ bool Annonce::empruntPossible(Date date){
     if((date.getAn().compare(getDateRetrait().getAn()))< 0){
         return true;
     }
+}
+
+
+int Annonce::getId(){
+    return id ;
 }
