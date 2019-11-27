@@ -11,7 +11,7 @@ public:
     int getMois();//rend le mois
     bool compareCurentDate(Date date); //Pour voir si la date de l'annonce est bien superieur a la date d'aujourdhui
     void setJour (int jour);//pour fixer le jour
-     int getJour();//rend le jour
+    int getJour();//rend le jour
 
     int getHeure();//rend la valeur de l'heure
 

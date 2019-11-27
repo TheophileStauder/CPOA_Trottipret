@@ -1,15 +1,13 @@
 #include "gestionnairecomptes.h"
 #include "compte.h"
+#include <iostream>
 
-// faire un singleton ou pas ??
-GestionnaireComptes::GestionnaireComptes(Compte compte)
-{
-    listComptes.push_back(compte);
-}
+
+
 
 GestionnaireComptes::GestionnaireComptes()
 {
-
+    std::cout << "Dans le constructeur du gestionnaire" << std::endl;
 }
 /**
  * @brief GestionnaireComptes::verifierCompte
@@ -17,6 +15,8 @@ GestionnaireComptes::GestionnaireComptes()
  * @return true si le compte peut etre cree, false sinon
  */
 bool GestionnaireComptes::verifierCompteAdr(std::string adrM){
+    std::cout << "Dans verifier compte" << std::endl ;
+
     bool b = true ;
     for(Compte c : listComptes){
         if(c.getAdr()==adrM){
@@ -28,17 +28,31 @@ bool GestionnaireComptes::verifierCompteAdr(std::string adrM){
 
 
 bool GestionnaireComptes::verifierCompteIzly(std::string idIzly){
+    std::cout << "Dans verifier compte" << std::endl ;
+    int i ;
     bool b = true ;
-    for(Compte c : listComptes){
-        if(c.getIdIzly()==idIzly){
+
+    for (auto i = listComptes.begin(); i != listComptes.end(); i++){
+        std::cout << "liste dans verifier compte : " << (*i).getIdIzly() << std::endl ;
+        if((*i).getIdIzly()==idIzly){
             b = false ;
         }
     }
+    /*for(Compte c : listComptes){
+        std::cout << "liste dans verifier compte : " << c.getIdIzly() << std::endl ;
+        if(c.getIdIzly()==idIzly){
+            b = false ;
+        }
+    }*/
     return b ;
 }
 
 void GestionnaireComptes::ajouterCompte(Compte compte){
+    std::cout << "Dans ajouter compte" << std::endl ;
     listComptes.push_back(compte);
+    for (auto i = listComptes.begin(); i != listComptes.end(); i++){
+        std::cout << "liste ajouter compte : " << (*i).getIdIzly() << std::endl ;
+    }
 }
 
 

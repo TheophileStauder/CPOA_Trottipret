@@ -16,10 +16,10 @@ private:
     GestionnaireComptes gestionnaire ;
 
 public:
-    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes g) ;
-    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes g) ;
+    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g) ;
+    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes& g) ;
     void setBio(std::string bio);
-    bool verfierCompte() ;
+    bool isEmailValide() ;
     std::string getNom() ;
     std::string getAdr() ;
     std::string getIdIzly() ;

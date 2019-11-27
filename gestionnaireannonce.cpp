@@ -38,4 +38,5 @@ bool GestionnaireAnnonce::verifierDisponibilite(std::string idAnnonce){
 
         }*/
     }
+    return true ; // a completer --> temporaire
 }
