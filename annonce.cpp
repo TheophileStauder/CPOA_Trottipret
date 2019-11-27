@@ -47,9 +47,33 @@ std::string Annonce::getVille(){
 
 bool Annonce::empruntPossible(Date date){
     //Ajouter une méthode dans date qui prend un date et comapre les deux date , retourne vrai si la premiere date est plus récente
-    if((date.getAn().compare(getDateRetrait().getAn()))< 0){
-        return true;
+
+    int anneDemandeEmprunt=date.getAn();
+    int anneeEmpruntPossible=getDateRetrait().getAn();
+    int jourDemandeEmprunt=date.getJour();
+    int jourEmpruntPossible=getDateRetrait().getJour();
+    int moisDemandeEmprunt=date.getMois();
+    int moisEmpruntPossible=getDateRetrait().getMois();
+
+    bool tmp=true;
+    if(anneDemandeEmprunt<anneeEmpruntPossible){
+       // std::cout << "prem condition "<< tmp << anneDemandeEmprunt << anneeEmpruntPossible ;
+        tmp=false;
     }
+
+    if(tmp==true){
+    if(moisDemandeEmprunt<moisEmpruntPossible){
+        tmp=false;
+      }
+    }
+
+   if(tmp==true){
+     if(jourDemandeEmprunt<jourEmpruntPossible){
+      tmp=false;
+   }
+   }
+
+    return tmp;
 }
 
 

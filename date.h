@@ -7,24 +7,24 @@ class Date
 {
 public:
     Date();
-    void setMois(std::string mois);//pour fixer le mois
-    std::string getMois();//rend le mois
-
-    void setJour (std::string jour);//pour fixer le jour
-    std::string getJour();//rend le jour
+    void setMois(int mois);//pour fixer le mois
+    int getMois();//rend le mois
+    bool compareCurentDate(Date date); //Pour voir si la date de l'annonce est bien superieur a la date d'aujourdhui
+    void setJour (int jour);//pour fixer le jour
+     int getJour();//rend le jour
 
     int getHeure();//rend la valeur de l'heure
 
     void setMinute(int min);//pour fixer les minutes
     int getMinute();//rend la valeur des minutes
 
-    void setAn(std::string an);
-    std::string getAn();
+    void setAn(int an);
+    int getAn();
 
 private:
-    std::string  mois;
-    std::string jour;
-    std::string an;
+    int  mois;
+    int jour;
+    int an;
     int heure;
     int minute;
 };
