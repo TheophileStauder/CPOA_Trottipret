@@ -22,7 +22,7 @@ public:
     std::string getDescr();//rend la valeur de la desc
     std::string getHoraire();//rend la valeur de l'horaire
     std::string getVille();
-    bool empruntPossible(Date date);
+    bool empruntPossible(Date date); //verifie si la date de demande d'emprunt est bien entre celle de l'annonce pour emprunter
     int getId() ;
 
 private:

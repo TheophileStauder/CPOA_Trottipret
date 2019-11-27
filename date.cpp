@@ -8,14 +8,13 @@ Date::Date()
 
 
 
-
-
 int Date::getHeure(){
     return heure;
 }
 int Date::getMinute(){
     return minute;
 }
+
 
 int Date::getJour(){
     return jour;
@@ -45,6 +44,7 @@ bool Date::compareCurentDate(Date date){
 }
 return tmp;
 }
+
 
 
 void Date::setMinute(int min){

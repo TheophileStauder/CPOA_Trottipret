@@ -10,6 +10,7 @@ class GestionnaireComptes
 private:
     std::vector<Compte> listComptes ;
 public:
+    GestionnaireComptes(Compte compte);
     GestionnaireComptes();
     bool verifierCompteAdr(std::string adrM);  //verification de la créeation avec adr mail
     bool verifierCompteIzly(std::string idIzly);   // verification de la creation avec compte Izly
