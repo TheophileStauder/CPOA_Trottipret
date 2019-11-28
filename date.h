@@ -16,6 +16,7 @@ class Date
 {
 public:
     Date();
+    Date(int min,int h,int jour,int mois,int annee);
     void setMois(int mois);//pour fixer le mois
     int getMois();//rend le mois
     bool compareCurentDate(Date date); //Pour voir si la date de l'annonce est bien superieur a la date d'aujourdhui
@@ -27,13 +28,13 @@ public:
     void setMinute(int min);//pour fixer les minutes
     int getMinute();//rend la valeur des minutes
 
-    void setAn(int an);
+    void setAn(int annee);
     int getAn();
 
 private:
     int  mois;
     int jour;
-    int an;
+    int annee;
     int heure;
     int minute;
 };

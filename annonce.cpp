@@ -21,13 +21,12 @@ Annonce::Annonce(){}
 /// @param t le tarif horaire
 /// @param retrait la date au plus tôt pour un début d'emprunt
 /// @param retour la date de fin de l'emprunt
-Annonce::Annonce(std::string descr, std::string v, float t, Date retrait, Date retour, int i){
+Annonce::Annonce(std::string descr, std::string v, float t, Date retrait, Date retour){
     description = descr ;
     ville = v ;
     tarif = t ;
     dateRetrait = retrait ;
     dateRetour = retour ;
-    id = i ;
 }
 /// @brief Getter sur la description de l'annonce
 ///

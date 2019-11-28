@@ -18,7 +18,7 @@ class Annonce
 {
 public:
     Annonce();
-    Annonce(std::string descr, std::string v, float t, Date retrait, Date retour, int i);
+    Annonce(std::string descr, std::string v, float t, Date retrait, Date retour);
 
     void sethoraire (std::string ho);//pour fixer l'horaire
     void setDescription (std::string descr);//pour fixer la description

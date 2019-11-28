@@ -17,6 +17,16 @@
  **
  ** @version 1a
  **/
+
+/// @brief Constructeur qui rempli les champs de la classe(sans bio)
+///
+/// @param p le prénom
+/// @param n le nom de famille
+/// @param t le tarif horaire
+/// @param adrM l'adresse mail
+/// @param idI l'identifiant Izly
+/// @pram mdpI le mot de passe Izly
+/// @param g un gestionnaire de compte
 Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g)  //contructeur sans la bio car optionnelle
 {
     prenom = p ;
@@ -35,6 +45,16 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 }
 
+/// @brief Constructeur qui rempli les champs de la classe(avec bio)
+///
+/// @param p le prénom
+/// @param n le nom de famille
+/// @param t le tarif horaire
+/// @param adrM l'adresse mail
+/// @param idI l'identifiant Izly
+/// @param mdpI le mot de passe Izly
+/// @param bio la mini biographie du compte
+/// @param g un gestionnaire de compte
 Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes& g) //constructeur avec bio
 {
     prenom = p ;
@@ -55,24 +75,40 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 }
 
+/// @brief Setter de la mini biographie du compte
+///
+/// @param bio la nouvelle biographie
 void Compte::setBio(std::string bio) // set la bio (optionnelle)
 {
     miniBio = bio ;
 }
 
 
+/// @brief Methode booléenne qui vérifie que l'email est valide avec une expression régulière
+///
+/// @return booléen
 bool Compte::isEmailValide(){
     const std::regex regex ("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
     return std::regex_match(adresseMail, regex) ;
 }
+
+/// @brief Getter du nom de compte
+///
+/// @return nom
 std::string Compte::getNom(){
     return nom ;
 }
 
+/// @brief Getter de l'id Izly
+///
+/// @return idIzly
 std::string Compte::getIdIzly(){
     return idIzly ;
 }
 
+/// @brief Getter de l'adresse mail
+///
+/// @return adresseMail
 std::string Compte::getAdr(){
     return adresseMail ;
 }

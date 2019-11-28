@@ -13,13 +13,25 @@
  ** @version 1a
  **/
 
+
+/// @brief Constructeur vide
 GestionnaireAnnonce::GestionnaireAnnonce(){}
 
 
+/// @brief Methode pour ajouter une annonce à la classe
+///
+/// @param annonce une annonce
 void GestionnaireAnnonce::ajouterAnnonce(Annonce annonce){
     listeAnnonce.push_back(annonce);
 }
 
+
+/// @brief Methode pour filtrer les annonce et garde celles correspondantes
+/// aux paramètres passés
+///
+/// @param tarif le prix horaire
+/// @param ville la ville
+/// @param date la date souhaité pour un début d'emprunt
 std::vector<Annonce> GestionnaireAnnonce::chercherAnnonce(double tarif,std::string Ville,Date date){
     std::vector<Annonce> resultatAnnoncesFiltrees;
 
@@ -32,15 +44,19 @@ std::vector<Annonce> GestionnaireAnnonce::chercherAnnonce(double tarif,std::stri
     return resultatAnnoncesFiltrees;
 }
 
+
+/// @brief Methode pour envoyer un requete à un preteur
+///
+/// @param idAnnonce l'identifiant de l'annonce
+/// @param idEmprunteur l'identifiant de l'emprunteur
 void GestionnaireAnnonce::envoiRequetePreteur(std::string idAnnonce,std::string idEmprunteur){
 
 }
 
 
-void GestionnaireAnnonce::creerAnnonce(double tarif,std::string ville,std::string adrRetrait,std::string adrRetour,Date date,std::string descriptif){
-
-}
-
+/// @brief Methode pour verifier la disponibilité d'une trotinette (verifie qu'elle n'a pas déjà été reservée
+///
+/// @param idAnnonce l'identifiant de l'annonce
 bool GestionnaireAnnonce::verifierDisponibilite(std::string idAnnonce){
     for(Annonce a : listeAnnonce){
         /*if(a.get){
