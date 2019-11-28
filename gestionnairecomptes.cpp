@@ -3,10 +3,18 @@
 #include <iostream>
 
 
+/** @brief La classe GestionnaireCompte est un manager de compte qui permet de gérer les créations de compte(interdiction
+ ** de creer des comptes avec même Id ou adresse Mail)
+ **
+ ** Elle contient un constructeur vide
+ **
+ ** Elle contient 3 méthodes :
+ **  @ref verifierCompteAdr(), @ref verifierCompte(),@ref envoiRequetePreteur(),@ref ajouterCompte()
+ **
+ ** @version 1a
+ **/
 
-
-GestionnaireComptes::GestionnaireComptes()
-{
+GestionnaireComptes::GestionnaireComptes(){
     std::cout << "Dans le constructeur du gestionnaire" << std::endl;
 }
 /**

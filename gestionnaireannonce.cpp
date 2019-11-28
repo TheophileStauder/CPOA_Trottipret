@@ -1,9 +1,20 @@
 #include "gestionnaireannonce.h"
-#include "compte.h"
+#include "annonce.h"
 #include <string>
 
-GestionnaireAnnonce::GestionnaireAnnonce()
-{
+/** @brief La classe GestionnaireAnnonce est un manager d'annonce qui permet de  faire le lien entre les utilisateurs
+ ** qui communiquent entre eux , commme par exemple lors des requêtes d'emprunt.
+ **
+ ** Elle contient un constructeur vide,un constructeur qui permet de remplir les champs de la classe
+ **
+ ** Elle contient 4 méthodes
+ **  @ref ajouterAnnonce(), @ref chercherAnnonce(),@ref envoiRequetePreteur(),@ref reponseDemande()
+ **
+ ** @version 1a
+ **/
+
+GestionnaireAnnonce::GestionnaireAnnonce(){
+    idAnnonce = 0 ;
 }
 
 
@@ -30,6 +41,10 @@ void GestionnaireAnnonce::envoiRequetePreteur(std::string idAnnonce,std::string 
 
 void GestionnaireAnnonce::creerAnnonce(double tarif,std::string ville,std::string adrRetrait,std::string adrRetour,Date date,std::string descriptif){
 
+}
+
+int GestionnaireAnnonce::getId(){
+   return idAnnonce++ ;
 }
 
 bool GestionnaireAnnonce::verifierDisponibilite(std::string idAnnonce){

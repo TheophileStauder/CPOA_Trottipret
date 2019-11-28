@@ -29,8 +29,8 @@ SOURCES += \
     gestionnaireannonce.cpp \
     compte.cpp \
     annonce.cpp \
-    date.cpp \
-    gestionnairecomptes.cpp
+    gestionnairecomptes.cpp \
+    date.cpp
 
 HEADERS += \
         mainwindow.h \
