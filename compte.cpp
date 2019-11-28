@@ -2,12 +2,12 @@
 #include "gestionnairecomptes.h"
 #include <assert.h>
 #include <iostream>
+#include <printf.h>
 #include <string>
-#include <regex>
 
 //http://www.siloged.fr/cours/QTCreator/CreerunObjet.html  exemple qt
 
-Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g)  //contructeur sans la bio car optionnelle
+Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes g)  //contructeur sans la bio car optionnelle
 {
     prenom = p ;
     nom = n ;
@@ -17,15 +17,16 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     mdpIzly = mdpI ;
     miniBio = "" ;
     gestionnaire = g ;
-    assert(g.verifierCompteIzly(idIzly)) ;
-    assert(g.verifierCompteAdr(adresseMail)) ;
-    assert(isEmailValide()) ;
+    assert(verfierCompte()) ;
 
-    std::cout << "Compte crée avec succès" << std::endl ;
-    g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
+    if(!verfierCompte()){  // a enlever plus tard
+        printf("Impossible de créer compte : adresse mail ou identifiant izly deja utilisé") ;
+    }
+
+    gestionnaire.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 }
 
-Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes& g) //constructeur avec bio
+Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes g) //constructeur avec bio
 {
     prenom = p ;
     nom = n ;
@@ -35,14 +36,6 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     mdpIzly = mdpI ;
     miniBio = bio ;
     gestionnaire = g ;
-
-
-    assert(isEmailValide()) ;
-   // assert(verifierCompte()) ;
-    assert(g.verifierCompteIzly(idIzly)) ;
-    assert(g.verifierCompteAdr(adresseMail)) ;
-    std::cout << "Compte crée avec succès" << std::endl ;
-    g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 }
 
 void Compte::setBio(std::string bio) // set la bio (optionnelle)
@@ -50,11 +43,22 @@ void Compte::setBio(std::string bio) // set la bio (optionnelle)
     miniBio = bio ;
 }
 
+bool Compte::verfierCompte(){   //verifie que le compte n'existe pas deja
+    bool b = true ;
+    b = gestionnaire.verifierCompteAdr(adresseMail) ;
+    // cas ou l'adr mail est deja utilisée
+    if(!b){
+        return false ;
+    }
 
-bool Compte::isEmailValide(){
-    const std::regex regex ("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
-    return std::regex_match(adresseMail, regex) ;
+    // cas ou l'id izly est deja utilisé
+    b = gestionnaire.verifierCompteIzly(idIzly) ;
+    if(!b){
+        return false ;
+    }
+    return true ;
 }
+
 std::string Compte::getNom(){
     return nom ;
 }

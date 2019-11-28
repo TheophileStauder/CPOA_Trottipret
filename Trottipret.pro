@@ -25,20 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
     gestionnaireannonce.cpp \
     compte.cpp \
     annonce.cpp \
     date.cpp \
-    gestionnairecomptes.cpp
+    gestionnairecomptes.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
     gestionnaireannonce.h \
     compte.h \
     annonce.h \
     date.h \
-    gestionnairecomptes.h
+    gestionnairecomptes.h \
+    mainwindow.h
 
 FORMS += \
-        mainwindow.ui
+    mainwindow.ui
