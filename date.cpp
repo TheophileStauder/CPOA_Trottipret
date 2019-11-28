@@ -1,13 +1,16 @@
 #include "date.h"
 #include <iostream>
 
-Date::Date()
-{
-//rien
-}
-
-
-
+/** @brief La classe Date est la classe qui représente une date au format JJ/MM/AAAA avec un horaire au format MM/HH
+ **
+ ** Elle contient un constructeur vide,un constructeur qui permet de remplir les champs de la classe
+ **
+ ** Elle contient x méthodes
+ **  @ref ...
+ **
+ ** @version 1a
+ **/
+Date::Date(){}
 
 
 int Date::getHeure(){

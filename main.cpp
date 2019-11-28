@@ -5,12 +5,18 @@
 #include <QApplication>
 using namespace std;
 
+
+/** @brief Un main basique qui permet de tester les différentes fonctionnalités
+ ** spécifiées pour la première itérations :
+ ** Pour cette version uniquement la création de compte
+ ** @version 1a
+ **/
 int main(int argc, char *argv[])
 {
    // QApplication a(argc, argv);
     //MainWindow w;
     //w.show();
-    //    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes g) ;
+    //Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes g) ;
 
     // Creation d'un compte sur terminal
     std::string prenom ;

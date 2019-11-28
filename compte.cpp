@@ -7,6 +7,16 @@
 
 //http://www.siloged.fr/cours/QTCreator/CreerunObjet.html  exemple qt
 
+/** @brief La classe Compte est la classe qui contient toutes les informations d'un utilisateur et lui permet de
+ ** s'authentifier au système
+ **
+ ** Elle contient deux constructeurs (un avec bio et un sans)
+ **
+ ** Elle contient 2 méthodes (sans compter les getter et setter basiques),
+ **  @ref verifierCompte(), @ref setBio()
+ **
+ ** @version 1a
+ **/
 Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g)  //contructeur sans la bio car optionnelle
 {
     prenom = p ;
