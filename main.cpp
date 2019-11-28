@@ -7,13 +7,14 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-   // QApplication a(argc, argv);
-    //MainWindow w;
-    //w.show();
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.setWindowTitle("Trottipret");
+     w.show();
     //    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes g) ;
 
     // Creation d'un compte sur terminal
-    std::string prenom ;
+    /*std::string prenom ;
     std::cout << "Saisir votre prenom : " ;
     std::cin >> prenom ;
 
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
 
     Compte compte(prenom, nom, adrM, idIzly, mdp, g) ;
 
-    //test ajouter une annonce
+    //test ajouter une annonce*/
 
-    return 0 ;
+   return a.exec();
 }
