@@ -13,7 +13,7 @@ class Annonce;
  ** Elle contient 4 méthodes
  **  @ref ajouterAnnonce(), @ref chercherAnnonce(),@ref envoiRequetePreteur(),@ref reponseDemande()
  **
- ** @version 1a
+ ** @version 1d
  **/
 class GestionnaireAnnonce
 {

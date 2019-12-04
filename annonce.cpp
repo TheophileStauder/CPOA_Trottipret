@@ -10,7 +10,7 @@
  ** Elle contient 2 méthodes (sans compter les getter et setter basiques),
  **  @ref verifierCompte(), @ref setBio()
  **
- ** @version 1a
+ ** @version 1d
  **/
 Annonce::Annonce(){}
 
@@ -67,13 +67,19 @@ void Annonce::setDateEmprunt (Date dateEmp){
     dateRetrait=dateEmp;
 }
 
-/// @brief Getter de la date de fin d'emprunt
+/// @brief Getter de la date de debut d'emprunt
 ///
-/// @return la date de fin d'emprunt
+/// @return la date de debut d'emprunt
 Date Annonce::getDateRetrait(){
     return dateRetrait;
 }
 
+/// @brief Getter de la date de fin d'emprunt
+///
+/// @return la date de fin d'emprunt
+Date Annonce::getDateRetour(){
+    return dateRetour;
+}
 
 /// @brief Getter du nom de la ville
 ///
@@ -126,4 +132,16 @@ bool Annonce::empruntPossible(Date date){
 /// @return id
 int Annonce::getId(){
     return id ;
+}
+
+
+///@brief Affiche l'annonce sur la sortie standard
+void Annonce::afficheAnnonce(){
+    std::cout << "Annonce numéro : " << getId() << std::endl;
+    std::cout << "\nDescription : " << getDescr() << std::endl;
+    std::cout << "\nVille  : " << getVille() << std::endl;
+    std::cout << "\nTarif horaire  : " << getTarif() << std::endl;
+    std::cout << "\nDate de début d'emprunt : " << getDateRetrait().toString() << std::endl;
+    std::cout << "\nDate de retour    : " << getDateRetour().toString() << std::endl;
+    std::cout << "\n\n\n\n"<< std::endl;
 }

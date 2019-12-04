@@ -15,6 +15,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_connexion_clicked();
+
+    void on_inscription_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

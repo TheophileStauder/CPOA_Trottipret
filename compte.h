@@ -1,6 +1,7 @@
 #ifndef COMPTE_H
 #define COMPTE_H
 #include <string>
+#include <vector>
 #include "gestionnairecomptes.h"
 
 
@@ -12,7 +13,7 @@
  ** Elle contient 2 méthodes (sans compter les getter et setter basiques),
  **  @ref verifierCompte(), @ref setBio()
  **
- ** @version 1a
+ ** @version 1d
  **/
 class Compte
 {
@@ -25,6 +26,8 @@ private:
     std::string idIzly ;
     std::string mdpIzly ;
     GestionnaireComptes gestionnaire ;
+    std::vector<int> mesAnnonces;
+
 
 public:
     Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g) ;
@@ -34,6 +37,7 @@ public:
     std::string getNom() ;
     std::string getAdr() ;
     std::string getIdIzly() ;
+    void ajouterAnnonce(int idAnnonce) ;
 
 
 };

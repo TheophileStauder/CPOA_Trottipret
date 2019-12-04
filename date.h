@@ -6,10 +6,10 @@
  **
  ** Elle contient un constructeur vide,un constructeur qui permet de remplir les champs de la classe
  **
- ** Elle contient x méthodes
- **  @ref ...
+ ** Elle contient 2 méthodes
+ **  @ref compareCurrentDate() et @ref toString()
  **
- ** @version 1a
+ ** @version 1d
  **/
 
 class Date
@@ -18,7 +18,7 @@ public:
     Date();
     void setMois(int mois);//pour fixer le mois
     int getMois();//rend le mois
-    bool compareCurentDate(Date date); //Pour voir si la date de l'annonce est bien superieur a la date d'aujourdhui
+    bool compareCurentDate(); //Pour voir si la date de l'annonce est bien superieur a la date d'aujourdhui
     void setJour (int jour);//pour fixer le jour
     int getJour();//rend le jour
 
@@ -30,6 +30,8 @@ public:
     void setAn(int an);
     void setHeure(int h) ;
     int getAn();
+
+    std::string  toString();
 
 private:
     int  mois;

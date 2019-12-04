@@ -12,7 +12,7 @@
  ** Elle contient 2 méthodes (sans compter les getter et setter basiques),
  **  @ref verifierCompte(), @ref setBio()
  **
- ** @version 1a
+ ** @version 1d
  **/
 
 class Annonce
@@ -34,6 +34,7 @@ public:
     std::string getVille();
     bool empruntPossible(Date date);
     int getId() ;
+    void afficheAnnonce() ;
 
 private:
     std::string description;

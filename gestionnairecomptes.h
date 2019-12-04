@@ -12,7 +12,7 @@ class Compte;
  ** Elle contient 3 méthodes :
  **  @ref verifierCompteAdr(), @ref verifierCompte(),@ref envoiRequetePreteur(),@ref ajouterCompte()
  **
- ** @version 1a
+ ** @version 1d
  **/
 class GestionnaireComptes
 {

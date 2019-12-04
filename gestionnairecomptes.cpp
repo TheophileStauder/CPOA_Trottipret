@@ -11,19 +11,21 @@
  ** Elle contient 3 méthodes :
  **  @ref verifierCompteAdr(), @ref verifierCompte(),@ref envoiRequetePreteur(),@ref ajouterCompte()
  **
- ** @version 1a
+ ** @version 1d
  **/
 
+
+///@brief constructeur vide
 GestionnaireComptes::GestionnaireComptes(){
-    std::cout << "Dans le constructeur du gestionnaire" << std::endl;
 }
+
+
 /**
  * @brief GestionnaireComptes::verifierCompte
  * @param adrM
  * @return true si le compte peut etre cree, false sinon
  */
 bool GestionnaireComptes::verifierCompteAdr(std::string adrM){
-    std::cout << "Dans verifier compte" << std::endl ;
 
     bool b = true ;
     for(Compte c : listComptes){
@@ -35,9 +37,13 @@ bool GestionnaireComptes::verifierCompteAdr(std::string adrM){
 }
 
 
+
+/**
+ * @brief GestionnaireComptes::verifierCompteIzly verfie que le compte n'existe pas déjà
+ * @param idIzly
+ * @return true si le compte peut etre cree, false sinon
+ */
 bool GestionnaireComptes::verifierCompteIzly(std::string idIzly){
-    std::cout << "Dans verifier compte" << std::endl ;
-    int i ;
     bool b = true ;
 
     for (auto i = listComptes.begin(); i != listComptes.end(); i++){
@@ -55,14 +61,14 @@ bool GestionnaireComptes::verifierCompteIzly(std::string idIzly){
     return b ;
 }
 
-void GestionnaireComptes::ajouterCompte(Compte compte){
-    std::cout << "Dans ajouter compte" << std::endl ;
-    listComptes.push_back(compte);
-    for (auto i = listComptes.begin(); i != listComptes.end(); i++){
-        std::cout << "liste ajouter compte : " << (*i).getIdIzly() << std::endl ;
-    }
-}
 
+/**
+ * @brief GestionnaireComptes::ajouterCompte ajoute un compte au gestionnaire
+ * @param compte
+ */
+void GestionnaireComptes::ajouterCompte(Compte compte){
+    listComptes.push_back(compte);
+}
 
 
 
