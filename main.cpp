@@ -18,7 +18,13 @@
  **/
 int main(int argc, char *argv[])
 {
+    //new Singleton(); // Won't work
+    GestionnaireComptes* s = GestionnaireComptes::getInstance(); // Ok
+    GestionnaireComptes* r = GestionnaireComptes::getInstance();
 
+    /* The addresses will be the same. */
+    std::cout << s << std::endl;
+    std::cout << r << std::endl;
     QApplication a(argc, argv);
         MainWindow w;
         w.setWindowTitle("Trottipret");

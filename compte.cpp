@@ -3,8 +3,7 @@
 #include <assert.h>
 #include <iostream>
 #include <string>
-#include <regex>
-#include <regex.h>
+
 
 //http://www.siloged.fr/cours/QTCreator/CreerunObjet.html  exemple qt
 
@@ -29,9 +28,9 @@
 /// @param adrM l'adresse mail
 /// @param idI l'identifiant Izly
 /// @pram mdpI le mot de passe Izly
-/// @param g un gestionnaire de compte
-Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g)  //contructeur sans la bio car optionnelle
+Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI)  //contructeur sans la bio car optionnelle
 {
+    GestionnaireComptes* g = GestionnaireComptes::getInstance();
     prenom = p ;
     nom = n ;
     moyenneNote = 0.0 ;
@@ -39,13 +38,12 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     idIzly = idI ;
     mdpIzly = mdpI ;
     miniBio = "" ;
-    gestionnaire = g ;
-    assert(g.verifierCompteIzly(idIzly)) ;
-    assert(g.verifierCompteAdr(adresseMail)) ;
-    assert(isEmailValide()) ;
+    assert(g->verifierCompteIzly(idIzly)) ;
+    assert(g->verifierCompteAdr(adresseMail)) ;
+    assert(g->isEmailValide(adresseMail)) ;
 
     std::cout << "Compte crée avec succès" << std::endl ;
-    g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
+    g->ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 }
 
 
@@ -59,9 +57,9 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
 /// @param idI l'identifiant Izly
 /// @param mdpI le mot de passe Izly
 /// @param bio la mini biographie du compte
-/// @param g un gestionnaire de compte
-Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes& g) //constructeur avec bio
+Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio) //constructeur avec bio
 {
+    GestionnaireComptes* g = GestionnaireComptes::getInstance();
     prenom = p ;
     nom = n ;
     moyenneNote = 0.0 ;
@@ -69,13 +67,12 @@ Compte::Compte(std::string p, std::string  n, std::string adrM, std::string idI,
     idIzly = idI ;
     mdpIzly = mdpI ;
     miniBio = bio ;
-    gestionnaire = g ;
 
 
-    assert(isEmailValide()) ;
-    assert(g.verifierCompteIzly(idIzly)) ;
-    assert(g.verifierCompteAdr(adresseMail)) ;
-    g.ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
+    assert(g->isEmailValide(adresseMail)) ;
+    assert(g->verifierCompteIzly(idIzly)) ;
+    assert(g->verifierCompteAdr(adresseMail)) ;
+    g->ajouterCompte(*this); // ajouter ce compte dans le gestionnaire
 
     std::cout << "**********************************************" << std::endl ;
     std::cout << "\n\nCompte crée avec succès\n" << std::endl ;
@@ -100,13 +97,6 @@ void Compte::ajouterAnnonce(int idAnnonce){
 }
 
 
-/// @brief Methode booléenne qui vérifie que l'email est valide avec une expression régulière
-///
-/// @return booléen
-bool Compte::isEmailValide(){
-    const std::regex regex ("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
-    return std::regex_match(adresseMail, regex) ;
-}
 
 
 /// @brief Getter du nom de compte

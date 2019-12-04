@@ -25,15 +25,13 @@ private:
     std::string miniBio ;
     std::string idIzly ;
     std::string mdpIzly ;
-    GestionnaireComptes gestionnaire ;
     std::vector<int> mesAnnonces;
 
 
 public:
-    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, GestionnaireComptes& g) ;
-    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio, GestionnaireComptes& g) ;
+    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI) ;
+    Compte(std::string p, std::string  n, std::string adrM, std::string idI, std::string mdpI, std::string bio) ;
     void setBio(std::string bio);
-    bool isEmailValide() ;
     std::string getNom() ;
     std::string getAdr() ;
     std::string getIdIzly() ;
