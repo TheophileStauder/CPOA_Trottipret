@@ -19,6 +19,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setDb(DbManager d){
+    db = d ;
+}
 void MainWindow::on_connexion_clicked()
 {
     QString adr,pass;
@@ -66,8 +69,11 @@ void MainWindow::on_inscription_clicked()
         }
         if(g->verifierCompteIzly(izly.toStdString()) && g->verifierCompteAdr(mail.toStdString()) && g->isEmailValide(mail.toStdString())){
          Compte compte(prenom.toStdString(), nom.toStdString(), mail.toStdString(), izly.toStdString(), mdp1.toStdString()) ;
+         db.ajouterCompte(izly, nom, prenom,mdp1, 0,mail,0) ;
          QMessageBox::information(this,"Inscription réussie","Vous êtes inscrit maintenant ");
         }
      }
 }
+
+
 

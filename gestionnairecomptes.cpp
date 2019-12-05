@@ -120,6 +120,3 @@ void GestionnaireComptes::connexionViaMail(std::string mail, std::string mdp){}
  */
 void GestionnaireComptes::connexionViaId(std::string id, std::string mdp){}
 
-
-
-
