@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include "gestionnairecomptes.h"
 #include "compte.h"
+#include "annoncewindow.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,16 +26,36 @@ void MainWindow::setDb(DbManager d){
 }
 void MainWindow::on_connexion_clicked()
 {
+    GestionnaireComptes* g = GestionnaireComptes::getInstance();
+    bool b = true ;  //pour savoir si la connexion est valide
     QString adr,pass;
     adr=ui->adress->text();
      pass=ui->pass->text();
      if(adr=="" || pass=="")
      {
-      QMessageBox::information(this,"Connexion non réussie","Veuillez remplir tout les champs");
-}
-     else{
-  QMessageBox::information(this,"Connexion réussie","Vous êtes connecté");
-}
+         b = false ;
+        QMessageBox::information(this,"Connexion non réussie","Veuillez remplir tout les champs");
+     }
+
+     if(g->isEmailValide(adr.toStdString())){  //cas de connexion avec une adr mail
+
+         if(!g->verifierCompteAdr(adr.toStdString())){
+             b = false ;
+             QMessageBox::information(this,"Inscription non réussie","Adresse mail deja utilisee");
+         }
+     }
+     else{   //cas de connexion avec un id
+         if(!g->verifierCompteIzly(adr.toStdString())){
+             b = false ;
+             QMessageBox::information(this,"Inscription non réussie","Identifiant deja utilise");
+         }
+     }
+     if(b){
+       QMessageBox::information(this,"Connexion réussie","Vous êtes connecté");
+       hide();
+       annonce=new AnnonceWindow(this);
+       annonce->show();
+    }
 }
 
 void MainWindow::on_inscription_clicked()
@@ -48,13 +70,12 @@ void MainWindow::on_inscription_clicked()
 
     if(nom=="" || prenom=="" || mail=="" || izly=="" || mdp1=="" || mdp2=="")
     {
-   QMessageBox::information(this,"Inscription non réussie","Veuillez remplir tout les champs");
-   }
-
+        QMessageBox::information(this,"Inscription non réussie","Veuillez remplir tout les champs");
+    }
 
     if(mdp1 != mdp2){
         QMessageBox::information(this,"Inscription non réussie","Mots de passe différents");
-   }
+    }
     else
      {
         GestionnaireComptes* g = GestionnaireComptes::getInstance();
@@ -71,6 +92,9 @@ void MainWindow::on_inscription_clicked()
          Compte compte(prenom.toStdString(), nom.toStdString(), mail.toStdString(), izly.toStdString(), mdp1.toStdString()) ;
          db.ajouterCompte(izly, nom, prenom,mdp1, 0,mail,0) ;
          QMessageBox::information(this,"Inscription réussie","Vous êtes inscrit maintenant ");
+         hide();
+         annonce=new AnnonceWindow(this);
+         annonce->show();
         }
      }
 }

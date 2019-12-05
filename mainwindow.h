@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "dbmanager.h"
+#include <annoncewindow.h>
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +26,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     DbManager db ;
+    AnnonceWindow *annonce;
+
 };
 
 #endif // MAINWINDOW_H

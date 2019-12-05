@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include <QSqlError>
+#include <QSqlRecord>
 
 DbManager::DbManager(){}
 DbManager::DbManager(const QString& name)
@@ -13,7 +14,6 @@ DbManager::DbManager(const QString& name)
         qDebug() << "Error: could not open database";
     else
         qDebug() << "Database opened successfully";
-
 }
 
 bool DbManager::ajouterCompte(QString idIzly,QString nom,QString prenom,QString mdpIzly,QString moyenneNote,QString adresseMail,QString miniBio)
@@ -40,18 +40,18 @@ bool DbManager::ajouterCompte(QString idIzly,QString nom,QString prenom,QString 
         qDebug() << "Error: could not add person " << queryAdd1.lastError() << queryAdd1.lastQuery();
         res = false ;
     }
-
+    afficherCompte(idIzly);
    return res;
 }
 
 void DbManager::afficherCompte(QString idIzly){
     std::cout<<"dans afficher compte" ;
-    QSqlQuery query;
-    query.prepare("SELECT * FROM compte");
-    query.exec();
-    while (query.next())
-    {
-       QString name = query.value(idIzly).toString();
-       qDebug() << name;
+
+    // Query all
+    auto queryAll = QSqlQuery{"SELECT * FROM compte;"};
+    int idIzly = queryAll.record().indexOf("idIzly");
+    while (queryAll.next()) {
+        auto id = queryAll.value(idIzly).toString();
+        qDebug() << "Identifiant Izly dans la base :: " << id;
     }
 }

@@ -29,11 +29,8 @@ SOURCES += \
     gestionnaireannonce.cpp \
     compte.cpp \
     annonce.cpp \
-    date.cpp \
     gestionnairecomptes.cpp \
-    annoncewindow.cpp \
-    profile.cpp \
-    messagerie.cpp \
+    date.cpp \
     dbmanager.cpp
 
 HEADERS += \
@@ -43,13 +40,7 @@ HEADERS += \
     annonce.h \
     date.h \
     gestionnairecomptes.h \
-    annoncewindow.h \
-    profile.h \
-    messagerie.h \
     dbmanager.h
 
 FORMS += \
-        mainwindow.ui \
-    annoncewindow.ui \
-    profile.ui \
-    messagerie.ui
+        mainwindow.ui
