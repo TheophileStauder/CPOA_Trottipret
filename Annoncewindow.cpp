@@ -1,24 +1,23 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "annoncewindow.h"
+#include "ui_annoncewindow.h"
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent) :
+annoncewindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("./img/pic.png");
+    QPixmap pix("../CPOA_Trottipret-master/img/pic.png");
     ui->label_pic->setPixmap(pix);
 
 }
 
-MainWindow::~MainWindow()
+annoncewindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::on_connexion_clicked()
+void annoncewindow::on_connexion_clicked()
 {
     QString adr,pass;
     adr=ui->adress->text();
@@ -29,14 +28,10 @@ void MainWindow::on_connexion_clicked()
 }
      else{
   QMessageBox::information(this,"Connexion réussie","Vous êtes connecté");
-   hide();
-   annonce=new AnnonceWindow(this);
-   annonce->show();
-
 }
 }
 
-void MainWindow::on_inscription_clicked()
+void annoncewindow::on_inscription_clicked()
 {
     QString nom,prenom,mail,izly,mdp1,mdp2;
     nom=ui->nom->text();
@@ -54,4 +49,5 @@ void MainWindow::on_inscription_clicked()
             QMessageBox::information(this,"Inscription réussie","Vous êtes inscrit maintenant ");
      }
 }
+
 

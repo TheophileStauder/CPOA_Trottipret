@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += sql
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,9 +29,11 @@ SOURCES += \
     gestionnaireannonce.cpp \
     compte.cpp \
     annonce.cpp \
-    gestionnairecomptes.cpp \
     date.cpp \
-    dbmanager.cpp
+    gestionnairecomptes.cpp \
+    annoncewindow.cpp \
+    profile.cpp \
+    messagerie.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +42,12 @@ HEADERS += \
     annonce.h \
     date.h \
     gestionnairecomptes.h \
-    dbmanager.h
+    annoncewindow.h \
+    profile.h \
+    messagerie.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    annoncewindow.ui \
+    profile.ui \
+    messagerie.ui
