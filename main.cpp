@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     /*Création de la base de donéee*/
     DbManager monDbManager("/home/profil/laconi3u/build-Trottipret-Desktop-Debug/compte2");
 
-   // monDbManager.ajouterCompte("12","stauder","theo","tutu","1","voile@live.fr","coucou");
+    // monDbManager.ajouterCompte("12","stauder","theo","tutu","1","voile@live.fr","coucou");
     //monDbManager.ajouterCompte("12","titi","theo","tutu","2","voile@live.fr","coucou");
     //monDbManager.ajouterCompte("13","str","tutu","tutu","2","voile@live.fr","coucou");
     //monDbManager.afficherCompte("13");

@@ -1,0 +1,17 @@
+
+/*Création table compte*/
+CREATE TABLE compte(idIzly integer primary key,nom text,prenom text,mdpIzly text,moyenneNote real,adresseMail text,miniBio text)
+
+
+/*Création table annonce*/
+CREATE TABLE ANNONCE
+(idAnnonce INT,
+description  TEXT,
+tarif INT,
+idAdresse int NOT NULL,
+idDate int NOT NULL,
+idIzly int  NOT NULL,
+PRIMARY KEY (idAnnonce),
+FOREIGN KEY (idAdresse) REFERENCES Adresse ON DELETE CASCADE,
+FOREIGN KEY (idDate) REFERENCES Date ON DELETE CASCADE,
+FOREIGN KEY (idIzly) REFERENCES Compte ON DELETE CASCADE)

@@ -33,7 +33,7 @@ void Messagerie::on_profil_clicked()
 
 void Messagerie::on_aide_clicked()
 {
-    QMessageBox::information(this,"Pour nous contancter : ","<br /> La directrice Maela :   @ <br /> <br />  L'assitante Nada : @ <br /> <br /> L'esclave Théophile : @");
+    QMessageBox::information(this,"Pour nous contacter : ","<br /> La directrice Maela :   @ <br /> <br />  L'assitante Nada : @ <br /> <br /> L'esclave Théophile : @");
 }
 
 void Messagerie::on_deconnexion_clicked()
