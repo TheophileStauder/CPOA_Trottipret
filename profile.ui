@@ -76,7 +76,7 @@ background-color: rgb(61, 88, 87);
 color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>Acceuil</string>
+      <string>Accueil</string>
      </property>
     </widget>
     <widget class="QPushButton" name="profil">
@@ -194,7 +194,7 @@ background-color: rgb(255, 255, 255);
 color: rgb(61, 88, 87);</string>
     </property>
     <property name="text">
-     <string>Annonces</string>
+     <string>Ajouter Annonce</string>
     </property>
    </widget>
    <widget class="QPushButton" name="demande">
@@ -215,7 +215,7 @@ color: rgb(61, 88, 87);</string>
      <string>Demandes en cours</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="modif">
+   <widget class="QPushButton" name="afficheAnnonce">
     <property name="geometry">
      <rect>
       <x>5</x>
@@ -230,7 +230,7 @@ background-color: rgb(255, 255, 255);
 color: rgb(61, 88, 87);</string>
     </property>
     <property name="text">
-     <string>Modifier</string>
+     <string>Mes annonces</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -311,6 +311,24 @@ color: rgb(61, 88, 87);</string>
     </property>
     <property name="text">
      <string>PHOTO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="modif">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>440</y>
+      <width>141</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(61, 88, 87); 
+background-color: rgb(255, 255, 255);
+color: rgb(61, 88, 87);</string>
+    </property>
+    <property name="text">
+     <string>Modifier</string>
     </property>
    </widget>
   </widget>

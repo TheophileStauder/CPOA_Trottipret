@@ -5,7 +5,6 @@
 #include "compte.h"
 #include "annoncewindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -25,7 +24,7 @@ void MainWindow::setDb(DbManager d){
     db = d ;
 }
 void MainWindow::on_connexion_clicked()
-{
+/*{
     GestionnaireComptes* g = GestionnaireComptes::getInstance();
     bool b = true ;  //pour savoir si la connexion est valide
     QString adr,pass;
@@ -51,6 +50,22 @@ void MainWindow::on_connexion_clicked()
          }
      }
      if(b){
+       QMessageBox::information(this,"Connexion réussie","Vous êtes connecté");
+       hide();
+       annonce=new AnnonceWindow(this);
+       annonce->show();
+    }
+}*/
+
+{
+    GestionnaireComptes* g = GestionnaireComptes::getInstance();
+
+     QString adr,pass;
+     adr=ui->adress->text();
+     pass=ui->pass->text();
+     bool connexion = db.connexionValide(adr,pass);//pour savoir si la connexion est valide
+
+     if(connexion){
        QMessageBox::information(this,"Connexion réussie","Vous êtes connecté");
        hide();
        annonce=new AnnonceWindow(this);
@@ -94,6 +109,8 @@ void MainWindow::on_inscription_clicked()
          QMessageBox::information(this,"Inscription réussie","Vous êtes inscrit maintenant ");
          hide();
          annonce=new AnnonceWindow(this);
+         annonce->setDb(db);
+         annonce->setId(izly);
          annonce->show();
         }
      }

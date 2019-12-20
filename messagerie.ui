@@ -73,7 +73,7 @@ background-color: rgb(61, 88, 87);
 color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>Acceuil</string>
+      <string>Accueil</string>
      </property>
     </widget>
     <widget class="QPushButton" name="profil">

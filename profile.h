@@ -2,10 +2,11 @@
 #define PROFILE_H
 
 #include <QMainWindow>
+#include "dbmanager.h"
 class AnnonceWindow;
 class MainWindow;
 class Messagerie;
-
+class Dialog;
 
 namespace Ui {
 class Profile;
@@ -18,6 +19,8 @@ class Profile : public QMainWindow
 public:
     explicit Profile(QWidget *parent = 0);
     ~Profile();
+    void setDb(DbManager db) ;
+    void setId(QString id) ;
 
 private slots:
     void on_acceuilprof_clicked();
@@ -36,11 +39,16 @@ private slots:
 
     void on_demandenevoi_clicked();
 
+    void on_afficheAnnonce_clicked();
+
 private:
     Ui::Profile *ui;
     AnnonceWindow *annonce;
      MainWindow *win;
      Messagerie *mess;
+     Dialog *dialog;
+     DbManager myDb ;
+     QString IdIzly ;
 };
 
 #endif // PROFILE_H

@@ -2,7 +2,7 @@
 #define ANNONCEWINDOW_H
 
 #include <QMainWindow>
-
+#include "dbmanager.h"
 
 class MainWindow;
 class Profile;
@@ -21,6 +21,9 @@ public:
     explicit AnnonceWindow(QWidget *parent = 0);
     ~AnnonceWindow();
 
+    void setDb(DbManager db) ;
+    void setId(QString id) ;
+
 private slots:
     void on_deconnexion_clicked();
 
@@ -30,11 +33,15 @@ private slots:
 
     void on_profil_clicked();
 
+    void rechercherAnnonce() ;
 private:
     Ui::AnnonceWindow *ui;
       MainWindow *win;
       Profile *p;
       Messagerie *mess;
+      DbManager myDb ;
+      QString idIzly ;
+
 };
 
 #endif // ANNONCEWINDOW_H

@@ -11,6 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Trottipret
 TEMPLATE = app
 
+
+# A été rajouté
+QMAKE_CXXFLAGS += -std=c++11
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -34,7 +38,8 @@ SOURCES += \
     annoncewindow.cpp \
     profile.cpp \
     messagerie.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    dialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,10 +51,12 @@ HEADERS += \
     annoncewindow.h \
     profile.h \
     messagerie.h \
-    dbmanager.h
+    dbmanager.h \
+    dialog.h
 
 FORMS += \
         mainwindow.ui \
     annoncewindow.ui \
     profile.ui \
-    messagerie.ui
+    messagerie.ui \
+    dialog.ui

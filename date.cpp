@@ -1,6 +1,7 @@
 #include "date.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 /** @brief La classe Date est la classe qui représente une date au format JJ/MM/AAAA avec un horaire au format MM/HH
  **

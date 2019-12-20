@@ -33,7 +33,7 @@ private:
     Ui::Messagerie *ui;
     MainWindow *win;
     Profile *p;
-        AnnonceWindow *annonce;
+    AnnonceWindow *annonce;
 };
 
 #endif // MESSAGERIE_H

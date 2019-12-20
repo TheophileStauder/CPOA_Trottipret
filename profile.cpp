@@ -4,6 +4,8 @@
 #include "mainwindow.h"
 #include "messagerie.h"
 #include <QMessageBox>
+#include  <QFileDialog>
+#include "dialog.h"
 
 Profile::Profile(QWidget *parent) :
     QMainWindow(parent),
@@ -45,7 +47,11 @@ void Profile::on_message_clicked()
 
 void Profile::on_annonce_clicked()
 {
-     QMessageBox::information(this,"Mes annonces : ","<br />Ici les annonces");
+    dialog=new Dialog(this);
+    dialog->setDb(myDb);
+    dialog->setId(IdIzly) ;
+    dialog->show();
+
 }
 
 void Profile::on_demande_clicked()
@@ -61,4 +67,18 @@ void Profile::on_modif_clicked()
 void Profile::on_demandenevoi_clicked()
 {
      QMessageBox::information(this,"Demande envoyé : ","<br />Ici mes demandes de pret");
+}
+
+
+void Profile::on_afficheAnnonce_clicked()
+{
+
+    QMessageBox::information(this,"Mes annonces : ","<br />Ici mes annonces de pret");
+}
+
+void Profile::setDb(DbManager db){
+    myDb = db ;
+}
+void Profile::setId(QString id){
+    IdIzly = id ;
 }

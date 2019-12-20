@@ -15,3 +15,6 @@ PRIMARY KEY (idAnnonce),
 FOREIGN KEY (idAdresse) REFERENCES Adresse ON DELETE CASCADE,
 FOREIGN KEY (idDate) REFERENCES Date ON DELETE CASCADE,
 FOREIGN KEY (idIzly) REFERENCES Compte ON DELETE CASCADE)
+
+/*table annonce utilisée pour l'instant dans le projet*/
+CREATE TABLE annonce(idAnnonce integer primary key, idIzly integer, ville text, adresse text, dateDeb text,dateFin text, prix real);

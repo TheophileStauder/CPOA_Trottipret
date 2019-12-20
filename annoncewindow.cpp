@@ -45,5 +45,24 @@ void AnnonceWindow::on_profil_clicked()
 {
     hide();
     p=new Profile(this);
+    p->setId(idIzly);
     p->show();
+}
+
+void AnnonceWindow::setDb(DbManager db){
+    myDb = db ;
+}
+
+void AnnonceWindow::setId(QString id){
+    idIzly = id ;
+}
+
+
+void AnnonceWindow::rechercherAnnonce(){
+    QString date,ville;
+
+    //date=ui->date->text();
+    //ville=ui->ville->text();
+   // myDb.rechercherAnnonce(date, ville) ;
+
 }
